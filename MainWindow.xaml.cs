@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Security.Policy;
 
 namespace lowkey
 {
@@ -32,22 +34,31 @@ namespace lowkey
 
         }
         MySqlConnection connection = new MySqlConnection("server=localhost; user=root; database=login; port=3306; password='';");
+        //private object urlkind;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Console.WriteLine("Connecting to MySQL...");
             connection.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT 'username', 'pwd' FROM 'user' WHERE 'user' = '" + CommentTextBox.Text + " '  AND 'pwd' = ' " + PasswordBox.Password, connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT `Username`, `Password` FROM `users` WHERE `Username` = '" + CommentTextBox.Text + "'  AND `Password` = '" + PasswordBox.Password + "'", connection);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Yes logged in");
+                //MessageBox.Show("Yes logged in");
+                NavigationWindow window = new NavigationWindow();
+                
+                window.Source = new Uri("Home.xaml", UriKind.Relative);
+                window.Show();
+                this.Close();
 
             }
             else
             {
-                MessageBox.Show("Invalid Login please check username and password");
+               // MessageBox.Show("Invalid Login please check username and password");
+                connection.Close();
+                Console.WriteLine("Done.");
             }
         }
     }

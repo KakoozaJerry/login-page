@@ -19,3 +19,5 @@ c:\users\hp\documents\visual studio 2015\Projects\lowkey\lowkey\obj\Debug\lowkey
 c:\users\hp\documents\visual studio 2015\Projects\lowkey\lowkey\obj\Debug\lowkey.pdb
 c:\users\hp\documents\visual studio 2015\Projects\lowkey\lowkey\bin\Debug\MySql.Data.dll
 c:\users\hp\documents\visual studio 2015\Projects\lowkey\lowkey\bin\Debug\MySql.Data.xml
+C:\Users\HP\documents\visual studio 2015\Projects\lowkey\lowkey\obj\Debug\Home.g.cs
+C:\Users\HP\documents\visual studio 2015\Projects\lowkey\lowkey\obj\Debug\Home.baml

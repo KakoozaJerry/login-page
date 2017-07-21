@@ -22,7 +22,7 @@
 
         <TextBox 		
 				 x:Name="CommentTextBox"
-				 materialDesign:HintAssist.Hint="Username" Margin="160,-5,-29,149" TextChanged="CommentTextBox_TextChanged"
+				 materialDesign:HintAssist.Hint="Username" Margin="160,136,228,149" TextChanged="CommentTextBox_TextChanged"
 				    />
         <materialDesign:PackIcon Grid.Row="3" Grid.Column="2" Kind="Key" Foreground="{Binding ElementName=PasswordBox, Path=BorderBrush}" HorizontalAlignment="Right" />
         <PasswordBox 		
